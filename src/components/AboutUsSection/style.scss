@@ -1,0 +1,215 @@
+.aboutUsSection {
+  padding-top: 135px;
+  font-size: 25px;
+  font-family: "monospace";
+  text-align: center;
+  height: 200px;
+  padding-left: 110px;
+  padding-right: 110px;
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+a {
+  color: inherit;
+}
+
+.cards-wrapper {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 4rem;
+  padding: 4rem;
+  margin: 0 auto;
+  width: max-content;
+  
+}
+
+.abt-card {
+  font-family: monospace;
+  --bg-filter-opacity: 0.5;
+  background-image: linear-gradient(rgba(0,0,0,var(--bg-filter-opacity)),rgba(0,0,0,var(--bg-filter-opacity))), var(--bg-img);
+  height: 20em;
+  width: 15em;
+  font-size: 1.5em;
+  color: white;
+  border-radius: 1em;
+  padding: 1em;
+  /*margin: 2em;*/
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 5em -1em black;
+  transition: all, var(--transition-time);
+  position: relative;
+  overflow: hidden;
+  border: 10px solid #ccc;
+  text-decoration: none;
+}
+
+.abt-card1 {
+  --bg-img: url("https://cdn-wp.thesportsrush.com/2020/06/Untitled-design-2020-06-18T042655.100.jpg") ;
+}
+
+.abt-card2 {
+  --bg-img: url("https://hips.hearstapps.com/amv-prod-gp.s3.amazonaws.com/gearpatrol/wp-content/uploads/2017/08/A-Better-911-Engine-Singer-gear-patrol-1.jpg") ;
+}
+
+.abt-card3 {
+  --bg-img: url("https://images.unsplash.com/photo-1603190287605-e6ade32fa852?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y3Jvd2QlMjBjaGVlcmluZ3xlbnwwfHwwfHw%3D&w=1000&q=80") ;
+}
+
+.abt-card:hover {
+  transform: rotate(0);
+}
+
+.abt-card h1 {
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 1.2em;
+}
+
+.abt-card p {
+  font-size: 0.75em;
+  font-family: 'Open Sans';
+  margin-top: 0.5em;
+  line-height: 2em;
+}
+
+.abt-card .tags {
+  display: flex;
+}
+
+.abt-card .tags .tag {
+  font-size: 0.75em;
+  background: rgba(255,255,255,0.5);
+  border-radius: 0.3rem;
+  padding: 0 0.5em;
+  margin-right: 0.5em;
+  line-height: 1.5em;
+  transition: all, var(--transition-time);
+}
+
+.abt-card:hover .tags .tag {
+  background: var(--color);
+  color: white;
+}
+
+.abt-card .date {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.75em;
+  padding: 1em;
+  line-height: 1em;
+  opacity: .8;
+}
+
+.abt-card:before, .abt-card:after {
+  content: '';
+  transform: scale(0);
+  transform-origin: top left;
+  border-radius: 50%;
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  z-index: -5;
+  transition: all, var(--transition-time);
+  transition-timing-function: ease-in-out;
+}
+
+.abt-card:before {
+  background: #ddd;
+  width: 250%;
+  height: 250%;
+}
+
+.abt-card:after {
+  background: white;
+  width: 200%;
+  height: 200%;
+}
+
+.abt-card:hover {
+  color: var(--color);
+}
+
+.abt-card:hover:before, .abt-card:hover:after {
+  transform: scale(1);
+}
+
+.card-grid-space .num {
+  font-size: 3em;
+  margin-bottom: 1.2rem;
+  margin-left: 1rem;
+}
+
+.info {
+  font-size: 1.2em;
+  display: flex;
+  padding: 1em 3em;
+  height: 3em;
+}
+
+.info img {
+  height: 3em;
+  margin-right: 0.5em;
+}
+
+.info h1 {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+
+/* MEDIA QUERIES */
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1285px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .info {
+    justify-content: center;
+  }
+  .card-grid-space .num {
+    //margin-left: 0;
+    //text-align: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .cards-wrapper {
+    padding: 4rem 2rem;
+  }
+  .abt-card {
+    max-width: calc(100vw - 4rem);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .info {
+    display: block;
+    text-align: center;
+  }
+  .info h1 {
+    margin: 0;
+  }
+}

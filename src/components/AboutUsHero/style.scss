@@ -1,0 +1,29 @@
+.aboutUs {
+    height: 600px;
+    background-image: url("https://cdn.motor1.com/images/mgl/pk9ko/s1/ferrari-70th-anniversary.jpg");
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    // position: absolute;
+  }
+  
+  .aboutUs p {
+    color: azure;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 25px;
+    font-size: 33px;
+    text-align: center;
+  }
+  
+  @keyframes fadeInAnimation {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
